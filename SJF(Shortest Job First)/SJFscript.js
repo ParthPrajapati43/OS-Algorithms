@@ -9,7 +9,7 @@ function AddJob() {
     tab.innerHTML +=
         `
         <tr>
-            <td><input type="text" value="Job-${rows}" id="J${rows}" size="2" disabled></td>
+            <td><input type="text" value="Job-${rows}" id="J${rows}" size="5" disabled></td>
             <td><input type="number" id="AT${rows}"></td>
             <td><input type="number" id="BT${rows}"></td>
             <td><input type="text" id="CT${rows}" size="5" disabled></td>
@@ -24,7 +24,7 @@ function AddJob() {
     let Row = document.querySelector("#Inputs").insertRow(++rows);
     let col = -1;
     let cell = Row.insertCell(++col);
-    cell.innerHTML += `<input type="text" value="Job-${rows}" id="J${rows }" size="2" disabled>`;
+    cell.innerHTML += `<input type="text" value="Job-${rows}" id="J${rows }" size="5" disabled>`;
     cell = Row.insertCell(++col);
     cell.innerHTML += `<input type="number" id="AT${rows}">`;
     cell = Row.insertCell(++col);
