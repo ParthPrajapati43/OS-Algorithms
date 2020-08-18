@@ -3,9 +3,12 @@ let rows = 0;
 /*
 This works well but not getting why entered values are getting reset/erased
 on adding a new joob by clicking the ADD JOB button
-function AddJob() {
+:: FIXED ::
+ISSUE Was: this was adding new tbody rather than tr
     let tab = document.querySelector("#Inputs");
-    ++rows;
+*/
+function AddJob() {
+    let tab = document.querySelector("#Inputs").insertRow(++rows);
     tab.innerHTML +=
         `
         <tr>
@@ -19,7 +22,8 @@ function AddJob() {
         </tr>
     `
 }
-*/
+
+/*
 function AddJob() {
     let Row = document.querySelector("#Inputs").insertRow(++rows);
     let col = -1;
@@ -38,7 +42,7 @@ function AddJob() {
     cell = Row.insertCell(++col);
     cell.innerHTML += `<input type="text" id="RT${rows}" size="5" disabled>`;
 }
-
+*/
 function RemoveJob() {
     if (rows > 0)
         document.querySelector("#Inputs").deleteRow(rows--);
