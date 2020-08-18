@@ -40,7 +40,8 @@ function AddJob() {
 }
 
 function RemoveJob() {
-    document.querySelector("#Inputs").deleteRow(rows--);
+    if (rows > 0)
+        document.querySelector("#Inputs").deleteRow(rows--);
 }
 
 function Solve() {
