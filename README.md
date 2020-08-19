@@ -1,2 +1,2 @@
-# OS-Algorithms-with-WebD
+# OS-Algorithms
 Website demonstrating the working of various Operating System Algorithms.
