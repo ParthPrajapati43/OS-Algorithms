@@ -13,5 +13,21 @@
             <option value="FCFS">FCFS</option>
             <option value="RR">RR</option>
         </select>
+
+        <table id="Inputs" cellspacing="5px">
+            <tr>
+                <th><input type="text" value="Job No." id="JH" size="5" disabled></th>
+                <th><input type="text" value="AT" id="ATH" disabled></th>
+                <th><input type="text" value="BT" id="BTH" disabled></th>
+                <th><input type="text" value="CT" id="CTH" size="5" disabled></th>
+                <th><input type="text" value="TAT" id="TATH" size="5" disabled></th>
+                <th><input type="text" value="WT" id="WTH" size="5" disabled></th>
+                <th><input type="text" value="RT" id="RTH" size="5" disabled></th>
+            </tr>
+        </table>
+        <button id="AddJob" onclick="AddJob()">ADD JOB</button>
+        <button id="RemoveJob" onclick="RemoveJob()">REMOVE JOB</button>
+        <button id="Solve" onclick="Solve()">SOLVE</button>
+        <script type="text/javascript" src="SJFscript.js"></script>
     </body>
 </html>
