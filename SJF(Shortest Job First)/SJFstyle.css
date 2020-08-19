@@ -1,3 +1,25 @@
 input {
     text-align: center;
 }
+
+div {
+    padding: 2px;
+    background-color: white;
+    margin: 2px;
+}
+
+h1 {
+    text-align: center;
+}
+
+th {
+    background-color: chartreuse;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(187, 255, 118);
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}

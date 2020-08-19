@@ -87,7 +87,6 @@ function Solve() {
             }
         }
 
-        let response = curr;
         // if not available make the current timer to the next closest Job
         if (!isthere) {
             for (let i = 0; i < rows; ++i) {
@@ -98,7 +97,6 @@ function Solve() {
             }
         }
 
-        response = curr - response;
         // get the list of all available Jobs
         let available = [];
         for (let i = 0; i < rows; ++i) {
@@ -123,10 +121,7 @@ function Solve() {
         table[present][3] = curr;
         table[present][4] = table[present][3] - table[present][1];
         table[present][5] = table[present][4] - table[present][2];
-        if (finished > 1)
-            table[present][6] = response;
-        else
-            table[present][6] = 0;
+        table[present][6] = curr - table[present][2] - table[present][1];
     }
 
     // setting the values to textbox
