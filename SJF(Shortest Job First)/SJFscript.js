@@ -26,12 +26,23 @@ AddJobbtn.onclick = () => {
 
 const RemoveJobbtn = document.getElementById("RemoveJob");
 RemoveJobbtn.onclick = () => {
-    if (rows > 0)
-        document.querySelector("#Inputs").deleteRow(rows--);
+    if (rows == 0)
+        return;
+    document.querySelector("#Inputs").deleteRow(rows--);
+    if (rows == 0) {
+        let r = 3;
+        while (r--) {
+            document.querySelector("#CalcAvg").deleteRow(r);
+        }
+    }
 }
 
 const Solvebtn = document.getElementById("Solve");
 Solvebtn.onclick = () => {
+
+    // if there are no jobs
+    if (rows == 0)
+        return;
 
     // check if any input box is empty or not
     for (let i = 1; i < rows + 1; ++i) {
@@ -116,11 +127,43 @@ Solvebtn.onclick = () => {
         table[present][6] = curr - table[present][2] - table[present][1];
     }
 
+    let avgTAT = 0;
+    let avgWT = 0;
+    let avgRT = 0;
+
     // setting the values to textbox
     for (let i = 0; i < rows; ++i) {
+        avgTAT += table[i][4];
+        avgWT += table[i][5];
+        avgRT += table[i][6];
         document.getElementById(`CT${table[i][0]}`).value = `${table[i][3]}`;
         document.getElementById(`TAT${table[i][0]}`).value = `${table[i][4]}`;
         document.getElementById(`WT${table[i][0]}`).value = `${table[i][5]}`;
         document.getElementById(`RT${table[i][0]}`).value = `${table[i][6]}`;
     }
+
+    // calculating the average
+    avgTAT /= rows;
+    avgWT /= rows;
+    avgRT /= rows;
+
+    // displaying the average
+    let avgg = document.querySelector("#average");
+    avgg.innerHTML =
+        `
+        <table id="CalcAvg" cellspacing="5px">
+            <tr>
+                <th><input type="text" id="avggTAT" size="9" value="Average TAT :" disabled></th>
+                <td><input type="text" name="avgTAT" id="avgTAT" value="${avgTAT}" disabled></td>
+            </tr>
+            <tr>
+                <th><input type="text" id="avggWT" size="9" value="Average WT  :" disabled></th>
+                <td><input type="text" name="avgWT" id="avgWT" value="${avgWT}" disabled></td>
+            </tr>
+            <tr>
+                <th><input type="text" id="avggRT" size="9" value="Average RT  : " disabled></th>
+                <td><input type="text" name="avgRT" id="avgRT" value="${avgRT}" disabled></td>
+            </tr>
+        </table>
+    `
 }
