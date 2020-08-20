@@ -7,7 +7,8 @@ on adding a new job by clicking the ADD JOB button
 ISSUE Was: this was adding new tbody rather than tr
     let tab = document.querySelector("#Inputs");
 */
-function AddJob() {
+const AddJobbtn = document.getElementById("AddJob");
+AddJobbtn.onclick = () => {
     let tab = document.querySelector("#Inputs").insertRow(++rows);
     tab.innerHTML +=
         `
@@ -23,32 +24,14 @@ function AddJob() {
     `
 }
 
-/*
-function AddJob() {
-    let Row = document.querySelector("#Inputs").insertRow(++rows);
-    let col = -1;
-    let cell = Row.insertCell(++col);
-    cell.innerHTML += `<input type="text" value="Job-${rows}" id="J${rows }" size="5" disabled>`;
-    cell = Row.insertCell(++col);
-    cell.innerHTML += `<input type="number" id="AT${rows}">`;
-    cell = Row.insertCell(++col);
-    cell.innerHTML += `<input type="number" id="BT${rows}">`;
-    cell = Row.insertCell(++col);
-    cell.innerHTML += `<input type="text" id="CT${rows}" size="5" disabled>`;
-    cell = Row.insertCell(++col);
-    cell.innerHTML += `<input type="text" id="TAT${rows}" size="5" disabled>`;
-    cell = Row.insertCell(++col);
-    cell.innerHTML += `<input type="text" id="WT${rows}" size="5" disabled>`;
-    cell = Row.insertCell(++col);
-    cell.innerHTML += `<input type="text" id="RT${rows}" size="5" disabled>`;
-}
-*/
-function RemoveJob() {
+const RemoveJobbtn = document.getElementById("RemoveJob");
+RemoveJobbtn.onclick = () => {
     if (rows > 0)
         document.querySelector("#Inputs").deleteRow(rows--);
 }
 
-function Solve() {
+const Solvebtn = document.getElementById("Solve");
+Solvebtn.onclick = () => {
 
     // check if any input box is empty or not
     for (let i = 1; i < rows + 1; ++i) {
