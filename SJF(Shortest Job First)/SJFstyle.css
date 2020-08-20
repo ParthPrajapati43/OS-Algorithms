@@ -23,3 +23,11 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
     background-color: white;
 }
+
+input:invalid {
+    border: 1px solid red;
+}
+
+input:valid {
+    border: 1px solid green;
+}

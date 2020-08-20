@@ -13,8 +13,8 @@ function AddJob() {
         `
         <tr>
             <td><input type="text" value="Job-${rows}" id="J${rows}" size="5" disabled></td>
-            <td><input type="number" id="AT${rows}"></td>
-            <td><input type="number" id="BT${rows}"></td>
+            <td><input type="number" id="AT${rows}" value="0" min="0" required></td>
+            <td><input type="number" id="BT${rows}" value="0" min="0" required></td>
             <td><input type="text" id="CT${rows}" size="5" disabled></td>
             <td><input type="text" id="TAT${rows}" size="5" disabled></td>
             <td><input type="text" id="WT${rows}" size="5" disabled></td>
@@ -49,6 +49,15 @@ function RemoveJob() {
 }
 
 function Solve() {
+
+    // check if any input box is empty or not
+    for (let i = 1; i < rows + 1; ++i) {
+
+        if (document.getElementById(`AT${i}`).value == '' || document.getElementById(`BT${i}`).value == '') {
+            alert("Error! Some imputs are empty.");
+            return;
+        }
+    }
 
     let table = [];
     // adding all the jobs data into an array
