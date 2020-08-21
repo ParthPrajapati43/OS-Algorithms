@@ -1,5 +1,5 @@
 let rows = 0;
-
+let todelete = false;
 const AddJobbtn = document.getElementById("AddJob");
 AddJobbtn.onclick = () => {
     let tab = document.querySelector("#Inputs").insertRow(++rows);
@@ -15,6 +15,19 @@ AddJobbtn.onclick = () => {
             <td><input type="text" id="RT${rows}" size="5" disabled></td>
         </tr>
     `
+    if (todelete) {
+        let r = 3;
+        while (r--) {
+            document.querySelector("#CalcAvg").deleteRow(r);
+        }
+        for (let i = 1; i < rows + 1; ++i) {
+            document.getElementById(`CT${i}`).value = "";
+            document.getElementById(`TAT${i}`).value = "";
+            document.getElementById(`WT${i}`).value = "";
+            document.getElementById(`RT${i}`).value = "";
+        }
+        todelete = false;
+    }
 }
 
 const RemoveJobbtn = document.getElementById("RemoveJob");
@@ -22,16 +35,25 @@ RemoveJobbtn.onclick = () => {
     if (rows == 0)
         return;
     document.querySelector("#Inputs").deleteRow(rows--);
-    if (rows == 0) {
+    if (todelete) {
         let r = 3;
         while (r--) {
             document.querySelector("#CalcAvg").deleteRow(r);
         }
+        for (let i = 1; i < rows + 1; ++i) {
+            document.getElementById(`CT${i}`).value = "";
+            document.getElementById(`TAT${i}`).value = "";
+            document.getElementById(`WT${i}`).value = "";
+            document.getElementById(`RT${i}`).value = "";
+        }
+        todelete = false;
     }
 }
 
 const Solvebtn = document.getElementById("Solve");
 Solvebtn.onclick = () => {
+
+    todelete = true;
 
     // if there are no jobs
     if (rows == 0)
@@ -120,8 +142,10 @@ Solvebtn.onclick = () => {
             ++cameonce;
             table[present][6] = curr - table[present][1];
         }
-        --table[present][2];
-        ++curr
+        if (table[present][2] > 0) {
+            --table[present][2];
+            ++curr
+        }
 
         // check if the job is finished or not
         if (table[present][2] == 0) {
