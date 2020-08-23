@@ -60,11 +60,11 @@ RemoveJobbtn.onclick = () => {
 const Solvebtn = document.getElementById("Solve");
 Solvebtn.onclick = () => {
 
-    todelete = true;
-
     // if there are no jobs
     if (rows == 0)
         return;
+
+    todelete = true;
 
     // check if any input box is empty or not
     for (let i = 1; i < rows + 1; ++i) {
