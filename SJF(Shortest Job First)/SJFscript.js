@@ -64,7 +64,6 @@ Solvebtn.onclick = () => {
     if (rows == 0)
         return;
 
-    todelete = true;
 
     // check if any input box is empty or not
     for (let i = 1; i < rows + 1; ++i) {
@@ -74,6 +73,8 @@ Solvebtn.onclick = () => {
             return;
         }
     }
+
+    todelete = true;
 
     let table = [];
     // adding all the jobs data into an array
