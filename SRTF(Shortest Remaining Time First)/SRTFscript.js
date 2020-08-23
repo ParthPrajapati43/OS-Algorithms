@@ -53,11 +53,11 @@ RemoveJobbtn.onclick = () => {
 const Solvebtn = document.getElementById("Solve");
 Solvebtn.onclick = () => {
 
-    todelete = true;
-
     // if there are no jobs
     if (rows == 0)
         return;
+
+    todelete = true;
 
     // check if any input box is empty or not
     for (let i = 1; i < rows + 1; ++i) {
@@ -115,7 +115,9 @@ Solvebtn.onclick = () => {
 
         // if not available make the current timer to the next closest Job
         if (!isthere) {
-            curr = table[0][1];
+            for (let i = 0; i < rows; ++i)
+                if (!completed[i])
+                    curr = table[i][1];
             for (let i = 0; i < rows; ++i) {
                 if (!completed[i]) {
                     curr = Math.min(curr, table[i][1]);
