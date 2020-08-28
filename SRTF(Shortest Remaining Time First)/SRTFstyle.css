@@ -1,0 +1,39 @@
+input {
+    text-align: center;
+}
+
+div {
+    padding: 2px;
+    background-color: white;
+    margin: 2px;
+}
+
+h1 {
+    text-align: center;
+}
+
+th {
+    background-color: rgb(184, 109, 255);
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(225, 195, 255);
+}
+
+input:invalid {
+    border: 1px solid red;
+}
+
+input:valid {
+    border: 1px solid green;
+}
+
+#avggTAT,
+#avggWT,
+#avggRT {
+    font-weight: bold;
+}
