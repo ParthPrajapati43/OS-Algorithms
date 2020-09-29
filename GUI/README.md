@@ -4,7 +4,7 @@ A Desktop Application to make vizualize the working of Process/Job Scheduling Al
 
 ## Language
 
-Python 3.8.3
+Python 3.8.3 (with GUI Library- PyQt5)
 
 ## Tools
 
