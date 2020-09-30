@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>686</height>
+    <height>687</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,8 +21,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
-    <height>0</height>
+    <width>1280</width>
+    <height>687</height>
    </size>
   </property>
   <property name="palette">
@@ -581,6 +581,9 @@
   <property name="styleSheet">
    <string notr="true">background: rgb(49, 54, 59);</string>
   </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="MemoryView">
     <property name="geometry">
@@ -665,6 +668,11 @@ color: #ffffff;
      <item>
       <property name="text">
        <string>LRTF</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Priority</string>
       </property>
      </item>
     </widget>
@@ -866,7 +874,7 @@ color: #ffffff;
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">*{background: #232629}</string>
+     <string notr="true">*{background: #232629;}</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -880,7 +888,7 @@ color: #ffffff;
        <x>30</x>
        <y>42</y>
        <width>799</width>
-       <height>215</height>
+       <height>209</height>
       </rect>
      </property>
      <property name="minimumSize">
@@ -1146,7 +1154,7 @@ border: 1px solid #ffffff;
       <number>30</number>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>73</number>
+      <number>65</number>
      </attribute>
      <attribute name="horizontalHeaderHighlightSections">
       <bool>false</bool>
@@ -1168,54 +1176,14 @@ border: 1px solid #ffffff;
        <set>AlignCenter</set>
       </property>
      </row>
-     <row>
+     <column>
       <property name="text">
-       <string>Job 02</string>
+       <string>Priority</string>
       </property>
       <property name="textAlignment">
        <set>AlignCenter</set>
       </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Job 03</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignCenter</set>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Job 04</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignCenter</set>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Job 05</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignCenter</set>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Job 06</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignCenter</set>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Job 07</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignCenter</set>
-      </property>
-     </row>
+     </column>
      <column>
       <property name="text">
        <string>AT</string>
@@ -1300,13 +1268,67 @@ border: 1px solid #ffffff;
       <property name="text">
        <string/>
       </property>
-      <property name="textAlignment">
-       <set>AlignLeading|AlignVCenter</set>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="0" column="1">
       <property name="text">
        <string/>
+      </property>
+      <property name="textAlignment">
+       <set>AlignLeading|AlignVCenter</set>
+      </property>
+     </item>
+     <item row="0" column="2">
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item row="0" column="3">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="0" column="4">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="0" column="5">
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="0" column="6">
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="0" column="7">
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="0" column="8">
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="0" column="9">
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="0" column="10">
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
     </widget>
@@ -1378,6 +1400,9 @@ color: #ffffff;</string>
      <property name="text">
       <string/>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLineEdit" name="AvgWT">
      <property name="geometry">
@@ -1393,6 +1418,9 @@ color: #ffffff;</string>
 font-size: 12px;
 color: #ffffff;</string>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLineEdit" name="AvgRT">
      <property name="geometry">
@@ -1407,6 +1435,9 @@ color: #ffffff;</string>
       <string notr="true">background: #31363b;
 font-size: 12px;
 color: #ffffff;</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="JobNoLabel">
@@ -1448,7 +1479,7 @@ font-size: 13px;
     <widget class="QPushButton" name="GoBtn">
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>206</x>
        <y>12</y>
        <width>43</width>
        <height>23</height>
@@ -1467,9 +1498,9 @@ font-size: 13px;
     <widget class="QPushButton" name="SolveBtn">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>744</x>
        <y>12</y>
-       <width>75</width>
+       <width>69</width>
        <height>23</height>
       </rect>
      </property>
@@ -1486,7 +1517,7 @@ font-size: 13px;
     <widget class="QPushButton" name="ResetBtn">
      <property name="geometry">
       <rect>
-       <x>646</x>
+       <x>662</x>
        <y>12</y>
        <width>69</width>
        <height>23</height>
@@ -1505,7 +1536,7 @@ font-size: 13px;
     <widget class="QPushButton" name="ImportBtn">
      <property name="geometry">
       <rect>
-       <x>304</x>
+       <x>274</x>
        <y>12</y>
        <width>69</width>
        <height>23</height>
@@ -1562,8 +1593,17 @@ color: #ffffff;
 font-size: 15px;
 }</string>
      </property>
+     <property name="text">
+      <string/>
+     </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="dragEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLineEdit" name="ReadyQueue">
@@ -1582,8 +1622,17 @@ color: #ffffff;
 font-size: 15px;
 }</string>
      </property>
+     <property name="text">
+      <string/>
+     </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="dragEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLineEdit" name="TerminatedQueue">
@@ -1602,8 +1651,14 @@ color: #ffffff;
 font-size: 15px;
 }</string>
      </property>
+     <property name="text">
+      <string/>
+     </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLineEdit" name="CPUinQueue">
@@ -1625,6 +1680,9 @@ font-size: 20px;
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLineEdit" name="IODeviceinQueue">
      <property name="geometry">
@@ -1645,6 +1703,9 @@ font-size: 20px;
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLineEdit" name="IOQueue">
      <property name="geometry">
@@ -1664,6 +1725,9 @@ font-size: 15px;
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="JobQueueLabel">
@@ -2041,166 +2105,6 @@ border: 1px solid #ffffff;
        <set>AlignCenter</set>
       </property>
      </row>
-     <column>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>2</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>3</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>4</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>5</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>6</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>7</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>8</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>9</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>10</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>11</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>12</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>13</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>14</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>15</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>16</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>17</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>18</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>19</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>20</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>21</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>22</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>23</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>24</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>25</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>26</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>27</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>28</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>29</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>30</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>31</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>32</string>
-      </property>
-     </column>
     </widget>
    </widget>
    <widget class="QFrame" name="Controls">
@@ -2549,7 +2453,7 @@ color: #ffffff;
     <widget class="QPushButton" name="GraphBtn">
      <property name="geometry">
       <rect>
-       <x>954</x>
+       <x>964</x>
        <y>6</y>
        <width>117</width>
        <height>23</height>
@@ -2568,7 +2472,7 @@ font-size: 13px;
     <widget class="QPushButton" name="DownloadBtn">
      <property name="geometry">
       <rect>
-       <x>1142</x>
+       <x>1098</x>
        <y>6</y>
        <width>81</width>
        <height>23</height>
@@ -2584,19 +2488,27 @@ font-size: 13px;
       <string>Download</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="HelpBtn">
+     <property name="geometry">
+      <rect>
+       <x>1196</x>
+       <y>6</y>
+       <width>53</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">*{
+background: #ffffff;
+font-size: 13px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Help</string>
+     </property>
+    </widget>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1280</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
