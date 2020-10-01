@@ -119,6 +119,86 @@ class Ui_MainWindow(object):
         for row in range(totalRows):
             self.JobTable.setItem(
                 row, col, QtWidgets.QTableWidgetItem("Terminated"))
+    
+    # Solve button Handler
+
+    def solveBtnHandler(self):
+        totalJobs = self.JobTable.rowCount()
+        ATlist = self.getATList()
+        BTlist = self.getBTList()
+
+        # algorithm
+
+        # array for job serial number for reference after sorting according to AT
+        jobNumber = []
+        for srno in range(totalJobs):
+            jobNumber.append(srno)
+
+        # sorting
+        for i in range(totalJobs):
+            for j in range(i, totalJobs):
+                if(ATlist[j] < ATlist[i]):
+                    ATlist[j], ATlist[i] = ATlist[i], ATlist[j]
+                    BTlist[j], BTlist[i] = BTlist[i], BTlist[j]
+                    jobNumber[j], jobNumber[i] = jobNumber[i], jobNumber[j]
+
+        # declaring all the column list
+        CTlist = []
+        TATlist = []
+        WTlist = []
+        RTlist = []
+        Perlist = []
+        Statelist = []
+
+        totalBT = 0
+
+        for i in range(totalJobs):
+            CTlist.append(0)
+            TATlist.append(0)
+            WTlist.append(0)
+            RTlist.append(0)
+            totalBT += BTlist[i]
+
+        currTime = 0
+        totalTAT = 0
+        totalWT = 0
+        totalRT = 0
+
+        for i in range(totalJobs):
+            if(ATlist[i] > currTime):
+                currTime = ATlist[i]
+            currTime += BTlist[i]
+            
+            CTlist[i] = currTime
+            TATlist[i] = CTlist[i] - ATlist[i]
+            WTlist[i] = TATlist[i] - BTlist[i]
+            RTlist[i] = currTime - BTlist[i] - ATlist[i]
+            totalTAT += TATlist[i]
+            totalWT += WTlist[i]
+            totalRT += RTlist[i]
+
+        # sorting back
+        for i in range(totalJobs):
+            for j in range(i, totalJobs):
+                if(jobNumber[j] < jobNumber[i]):
+                    ATlist[j], ATlist[i] = ATlist[i], ATlist[j]
+                    BTlist[j], BTlist[i] = BTlist[i], BTlist[j]
+                    CTlist[j], CTlist[i] = CTlist[i], CTlist[j]
+                    TATlist[j], TATlist[i] = TATlist[i], TATlist[j]
+                    WTlist[j], WTlist[i] = WTlist[i], WTlist[j]
+                    RTlist[j], RTlist[i] = RTlist[i], RTlist[j]
+                    jobNumber[j], jobNumber[i] = jobNumber[i], jobNumber[j]
+
+        self.setCTlist(CTlist)
+        self.setTATlist(TATlist)
+        self.setWTlist(WTlist)
+        self.setRTlist(RTlist)
+        self.setDefaultPerc()
+        self.setDefaultState()
+
+        self.AvgTAT.setText(str(round(totalTAT/totalJobs, 5)))
+        self.AvgWT.setText(str(round(totalWT/totalJobs, 5)))
+        self.AvgRT.setText(str(round(totalRT/totalJobs, 5)))
 
     
     def setupUi(self, MainWindow):
@@ -1152,6 +1232,9 @@ class Ui_MainWindow(object):
         self.GraphBtn.setText(_translate("MainWindow", "Generate Graph"))
         self.DownloadBtn.setText(_translate("MainWindow", "Download"))
         self.HelpBtn.setText(_translate("MainWindow", "Help"))
+
+        # Adding Handler on Click to solve button.
+        self.SolveBtn.clicked.connect(self.solveBtnHandler)
 
 
 if __name__ == "__main__":
