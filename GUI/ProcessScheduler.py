@@ -72,6 +72,53 @@ class Ui_MainWindow(object):
             BTlist.append(int(valueHere))
 
         return BTlist
+    
+    def setCTlist(self, CTlist):
+        totalRows = self.JobTable.rowCount()
+
+        col = 5
+        for row in range(totalRows):
+            self.JobTable.setItem(
+                row, col, QtWidgets.QTableWidgetItem(str(CTlist[row])))
+
+    def setTATlist(self, TATlist):
+        totalRows = self.JobTable.rowCount()
+
+        col = 6
+        for row in range(totalRows):
+            self.JobTable.setItem(
+                row, col, QtWidgets.QTableWidgetItem(str(TATlist[row])))
+
+    def setWTlist(self, WTlist):
+        totalRows = self.JobTable.rowCount()
+
+        col = 7
+        for row in range(totalRows):
+            self.JobTable.setItem(
+                row, col, QtWidgets.QTableWidgetItem(str(WTlist[row])))
+
+    def setRTlist(self, RTlist):
+        totalRows = self.JobTable.rowCount()
+
+        col = 8
+        for row in range(totalRows):
+            self.JobTable.setItem(
+                row, col, QtWidgets.QTableWidgetItem(str(RTlist[row])))
+
+    def setDefaultPerc(self):
+        totalRows = self.JobTable.rowCount()
+
+        col = 9
+        for row in range(totalRows):
+            self.JobTable.setItem(row, col, QtWidgets.QTableWidgetItem("100"))
+
+    def setDefaultState(self):
+        totalRows = self.JobTable.rowCount()
+
+        col = 10
+        for row in range(totalRows):
+            self.JobTable.setItem(
+                row, col, QtWidgets.QTableWidgetItem("Terminated"))
 
     
     def setupUi(self, MainWindow):
