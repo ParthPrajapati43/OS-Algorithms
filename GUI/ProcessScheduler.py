@@ -12,21 +12,85 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_MainWindow(object):
+
+    def getPriorityList(self):
+        Prioritylist = []
+        totalRows = self.JobTable.rowCount()
+
+        col = 0
+        for row in range(totalRows):
+            item = self.JobTable.item(row, col)
+            valueHere = item.text()
+            Prioritylist.append(int(valueHere))
+
+        return Prioritylist
+
+    def getATList(self):
+
+        ATlist = []
+        totalRows = self.JobTable.rowCount()
+        col = 1
+        for row in range(totalRows):
+            item = self.JobTable.item(row, col)
+            valueHere = item.text()
+            ATlist.append(int(valueHere))
+
+        return ATlist
+
+    def getBTList(self):
+        BTlist = []
+        totalRows = self.JobTable.rowCount()
+
+        col = 2
+        for row in range(totalRows):
+            item = self.JobTable.item(row, col)
+            valueHere = item.text()
+            BTlist.append(int(valueHere))
+
+        return BTlist
+
+    def getIOBTList(self):
+        IOBTlist = []
+        totalRows = self.JobTable.rowCount()
+
+        col = 3
+        for row in range(totalRows):
+            item = self.JobTable.item(row, col)
+            valueHere = item.text()
+            IOBTlist.append(int(valueHere))
+
+        return IOBTlist
+
+    def getBT2List(self):
+        BTlist = []
+        totalRows = self.JobTable.rowCount()
+
+        col = 4
+        for row in range(totalRows):
+            item = self.JobTable.item(row, col)
+            valueHere = item.text()
+            BTlist.append(int(valueHere))
+
+        return BTlist
+
+    
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setWindowModality(QtCore.Qt.ApplicationModal)
         MainWindow.resize(1280, 687)
-        MainWindow.setMaximumSize(1280, 687)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setMinimumSize(QtCore.QSize(1280, 687))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(49, 54, 59))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
@@ -47,10 +111,12 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.BrightText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.BrightText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(49, 54, 59))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
@@ -62,31 +128,39 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Shadow, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Highlight, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.Highlight, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.HighlightedText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.HighlightedText, brush)
         brush = QtGui.QBrush(QtGui.QColor(99, 99, 99))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Link, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.LinkVisited, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.LinkVisited, brush)
         brush = QtGui.QBrush(QtGui.QColor(42, 42, 42))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.AlternateBase, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.AlternateBase, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 220))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ToolTipBase, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.ToolTipBase, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ToolTipText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.ToolTipText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 128))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.PlaceholderText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.PlaceholderText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(49, 54, 59))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
@@ -95,7 +169,8 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Light, brush)
         brush = QtGui.QBrush(QtGui.QColor(105, 105, 105))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Midlight, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.Midlight, brush)
         brush = QtGui.QBrush(QtGui.QColor(42, 42, 42))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Dark, brush)
@@ -107,10 +182,12 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.BrightText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.BrightText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(49, 54, 59))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
@@ -122,31 +199,39 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Shadow, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Highlight, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.Highlight, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.HighlightedText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.HighlightedText, brush)
         brush = QtGui.QBrush(QtGui.QColor(99, 99, 99))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Link, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.LinkVisited, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.LinkVisited, brush)
         brush = QtGui.QBrush(QtGui.QColor(42, 42, 42))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.AlternateBase, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.AlternateBase, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 220))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ToolTipBase, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.ToolTipBase, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ToolTipText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.ToolTipText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 128))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.PlaceholderText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.PlaceholderText, brush)
         brush = QtGui.QBrush(QtGui.QColor(42, 42, 42))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(49, 54, 59))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
@@ -155,7 +240,8 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Light, brush)
         brush = QtGui.QBrush(QtGui.QColor(105, 105, 105))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Midlight, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.Midlight, brush)
         brush = QtGui.QBrush(QtGui.QColor(42, 42, 42))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Dark, brush)
@@ -167,10 +253,12 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.BrightText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.BrightText, brush)
         brush = QtGui.QBrush(QtGui.QColor(42, 42, 42))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(49, 54, 59))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
@@ -182,28 +270,35 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Shadow, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Highlight, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.Highlight, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.HighlightedText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.HighlightedText, brush)
         brush = QtGui.QBrush(QtGui.QColor(99, 99, 99))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Link, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.LinkVisited, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.LinkVisited, brush)
         brush = QtGui.QBrush(QtGui.QColor(84, 84, 84))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.AlternateBase, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.AlternateBase, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 220))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipBase, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.ToolTipBase, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.ToolTipText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 128))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.PlaceholderText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.PlaceholderText, brush)
         MainWindow.setPalette(palette)
         MainWindow.setStyleSheet("background: rgb(49, 54, 59);")
         MainWindow.setUnifiedTitleAndToolBarOnMac(False)
@@ -219,16 +314,16 @@ class Ui_MainWindow(object):
         self.AlgoLabel = QtWidgets.QLabel(self.MemoryView)
         self.AlgoLabel.setGeometry(QtCore.QRect(20, 14, 111, 16))
         self.AlgoLabel.setStyleSheet("*{\n"
-"font-size: 14px;\n"
-"color: #ffffff;\n"
-"}")
+                                     "font-size: 14px;\n"
+                                     "color: #ffffff;\n"
+                                     "}")
         self.AlgoLabel.setObjectName("AlgoLabel")
         self.AlgoSelector = QtWidgets.QComboBox(self.MemoryView)
         self.AlgoSelector.setGeometry(QtCore.QRect(130, 14, 75, 22))
         self.AlgoSelector.setStyleSheet("*{\n"
-"    font-size: 13px;\n"
-"    background: #ffffff;\n"
-"}")
+                                        "    font-size: 13px;\n"
+                                        "    background: #ffffff;\n"
+                                        "}")
         self.AlgoSelector.setObjectName("AlgoSelector")
         self.AlgoSelector.addItem("")
         self.AlgoSelector.addItem("")
@@ -240,44 +335,44 @@ class Ui_MainWindow(object):
         self.ModeLabel = QtWidgets.QLabel(self.MemoryView)
         self.ModeLabel.setGeometry(QtCore.QRect(20, 54, 81, 16))
         self.ModeLabel.setStyleSheet("*{\n"
-"font-size: 14px;\n"
-"color: #ffffff;\n"
-"}")
+                                     "font-size: 14px;\n"
+                                     "color: #ffffff;\n"
+                                     "}")
         self.ModeLabel.setObjectName("ModeLabel")
         self.TypeLabel = QtWidgets.QLabel(self.MemoryView)
         self.TypeLabel.setGeometry(QtCore.QRect(20, 114, 91, 16))
         self.TypeLabel.setStyleSheet("*{\n"
-"    font-size: 14px;\n"
-"color: #ffffff;\n"
-"}")
+                                     "    font-size: 14px;\n"
+                                     "color: #ffffff;\n"
+                                     "}")
         self.TypeLabel.setObjectName("TypeLabel")
         self.ContextSwitchLabel = QtWidgets.QLabel(self.MemoryView)
         self.ContextSwitchLabel.setGeometry(QtCore.QRect(20, 174, 111, 16))
         self.ContextSwitchLabel.setStyleSheet("*{\n"
-"font-size: 14px;\n"
-"color: #ffffff;\n"
-"}")
+                                              "font-size: 14px;\n"
+                                              "color: #ffffff;\n"
+                                              "}")
         self.ContextSwitchLabel.setObjectName("ContextSwitchLabel")
         self.ContextSwitchSelector = QtWidgets.QSpinBox(self.MemoryView)
         self.ContextSwitchSelector.setGeometry(QtCore.QRect(130, 174, 42, 22))
         self.ContextSwitchSelector.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                                 "background: #ffffff;\n"
+                                                 "font-size: 13px;\n"
+                                                 "}")
         self.ContextSwitchSelector.setObjectName("ContextSwitchSelector")
         self.TimeQuantumLabel = QtWidgets.QLabel(self.MemoryView)
         self.TimeQuantumLabel.setGeometry(QtCore.QRect(20, 214, 101, 16))
         self.TimeQuantumLabel.setStyleSheet("*{\n"
-"font-size: 14px;\n"
-"color: #ffffff;\n"
-"}")
+                                            "font-size: 14px;\n"
+                                            "color: #ffffff;\n"
+                                            "}")
         self.TimeQuantumLabel.setObjectName("TimeQuantumLabel")
         self.TimeQuantumSelector = QtWidgets.QSpinBox(self.MemoryView)
         self.TimeQuantumSelector.setGeometry(QtCore.QRect(130, 214, 42, 22))
         self.TimeQuantumSelector.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                               "background: #ffffff;\n"
+                                               "font-size: 13px;\n"
+                                               "}")
         self.TimeQuantumSelector.setObjectName("TimeQuantumSelector")
         self.layoutWidget = QtWidgets.QWidget(self.MemoryView)
         self.layoutWidget.setGeometry(QtCore.QRect(130, 52, 115, 50))
@@ -287,16 +382,16 @@ class Ui_MainWindow(object):
         self.ModeSelector.setObjectName("ModeSelector")
         self.ModeNonPreemptive = QtWidgets.QRadioButton(self.layoutWidget)
         self.ModeNonPreemptive.setStyleSheet("*{\n"
-"font-size: 13px;\n"
-"color: #ffffff;\n"
-"}")
+                                             "font-size: 13px;\n"
+                                             "color: #ffffff;\n"
+                                             "}")
         self.ModeNonPreemptive.setObjectName("ModeNonPreemptive")
         self.ModeSelector.addWidget(self.ModeNonPreemptive)
         self.ModePreemptive = QtWidgets.QRadioButton(self.layoutWidget)
         self.ModePreemptive.setStyleSheet("*{\n"
-"font-size: 13px;\n"
-"color: #ffffff;\n"
-"}")
+                                          "font-size: 13px;\n"
+                                          "color: #ffffff;\n"
+                                          "}")
         self.ModePreemptive.setObjectName("ModePreemptive")
         self.ModeSelector.addWidget(self.ModePreemptive)
         self.layoutWidget1 = QtWidgets.QWidget(self.MemoryView)
@@ -307,22 +402,22 @@ class Ui_MainWindow(object):
         self.TypeSelector.setObjectName("TypeSelector")
         self.TypeWithoutIOBT = QtWidgets.QRadioButton(self.layoutWidget1)
         self.TypeWithoutIOBT.setStyleSheet("*{\n"
-"font-size: 13px;\n"
-"color: #ffffff;\n"
-"}")
+                                           "font-size: 13px;\n"
+                                           "color: #ffffff;\n"
+                                           "}")
         self.TypeWithoutIOBT.setObjectName("TypeWithoutIOBT")
         self.TypeSelector.addWidget(self.TypeWithoutIOBT)
         self.TypeWithIOBT = QtWidgets.QRadioButton(self.layoutWidget1)
         self.TypeWithIOBT.setStyleSheet("*{\n"
-"font-size: 13px;\n"
-"color: #ffffff;\n"
-"}")
+                                        "font-size: 13px;\n"
+                                        "color: #ffffff;\n"
+                                        "}")
         self.TypeWithIOBT.setObjectName("TypeWithIOBT")
         self.TypeSelector.addWidget(self.TypeWithIOBT)
         self.JobInputs = QtWidgets.QFrame(self.centralwidget)
         self.JobInputs.setGeometry(QtCore.QRect(280, 10, 991, 271))
         self.JobInputs.setAutoFillBackground(False)
-        self.JobInputs.setStyleSheet("*{background: #232629}")
+        self.JobInputs.setStyleSheet("*{background: #232629;}")
         self.JobInputs.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.JobInputs.setFrameShadow(QtWidgets.QFrame.Raised)
         self.JobInputs.setObjectName("JobInputs")
@@ -333,7 +428,8 @@ class Ui_MainWindow(object):
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(49, 54, 59))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
@@ -342,7 +438,8 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(49, 54, 59))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
@@ -351,10 +448,12 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 128))
         brush.setStyle(QtCore.Qt.NoBrush)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.PlaceholderText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.PlaceholderText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(49, 54, 59))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
@@ -363,7 +462,8 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(49, 54, 59))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
@@ -372,10 +472,12 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 128))
         brush.setStyle(QtCore.Qt.NoBrush)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.PlaceholderText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.PlaceholderText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(49, 54, 59))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
@@ -384,7 +486,8 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(49, 54, 59))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
@@ -393,28 +496,29 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 128))
         brush.setStyle(QtCore.Qt.NoBrush)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.PlaceholderText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.PlaceholderText, brush)
         self.JobTable.setPalette(palette)
         self.JobTable.setAutoFillBackground(False)
         self.JobTable.setStyleSheet("*{\n"
-"background: #31363b;\n"
-"font-size: 13px;\n"
-"color: #ffffff;\n"
-"border: 0px solid #000000;\n"
-"}\n"
-"\n"
-"QTableWidget{\n"
-"gridline-color: #ffffff;\n"
-"}\n"
-"\n"
-"QHeaderView::section\n"
-"{\n"
-"background: #31363b;\n"
-"font-size: 14px;\n"
-"color: #ffffff;\n"
-"border: 1px solid #ffffff;\n"
-"}\n"
-"")
+                                    "background: #31363b;\n"
+                                    "font-size: 13px;\n"
+                                    "color: #ffffff;\n"
+                                    "border: 0px solid #000000;\n"
+                                    "}\n"
+                                    "\n"
+                                    "QTableWidget{\n"
+                                    "gridline-color: #ffffff;\n"
+                                    "}\n"
+                                    "\n"
+                                    "QHeaderView::section\n"
+                                    "{\n"
+                                    "background: #31363b;\n"
+                                    "font-size: 14px;\n"
+                                    "color: #ffffff;\n"
+                                    "border: 1px solid #ffffff;\n"
+                                    "}\n"
+                                    "")
         self.JobTable.setFrameShadow(QtWidgets.QFrame.Plain)
         self.JobTable.setLineWidth(2)
         self.JobTable.setMidLineWidth(2)
@@ -422,10 +526,7 @@ class Ui_MainWindow(object):
         self.JobTable.setCornerButtonEnabled(False)
         self.JobTable.setObjectName("JobTable")
         self.JobTable.setColumnCount(11)
-        self.JobTable.setRowCount(1)
-        item = QtWidgets.QTableWidgetItem()
-        item.setTextAlignment(QtCore.Qt.AlignCenter)
-        self.JobTable.setVerticalHeaderItem(0, item)
+        self.JobTable.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         item.setTextAlignment(QtCore.Qt.AlignCenter)
         self.JobTable.setHorizontalHeaderItem(0, item)
@@ -459,38 +560,6 @@ class Ui_MainWindow(object):
         item = QtWidgets.QTableWidgetItem()
         item.setTextAlignment(QtCore.Qt.AlignCenter)
         self.JobTable.setHorizontalHeaderItem(10, item)
-        item = QtWidgets.QTableWidgetItem()
-        item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsDragEnabled|QtCore.Qt.ItemIsDropEnabled|QtCore.Qt.ItemIsUserCheckable|QtCore.Qt.ItemIsEnabled)
-        self.JobTable.setItem(0, 0, item)
-        item = QtWidgets.QTableWidgetItem()
-        item.setTextAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignVCenter)
-        self.JobTable.setItem(0, 1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.JobTable.setItem(0, 2, item)
-        item = QtWidgets.QTableWidgetItem()
-        item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsDragEnabled|QtCore.Qt.ItemIsDropEnabled|QtCore.Qt.ItemIsUserCheckable|QtCore.Qt.ItemIsEnabled)
-        self.JobTable.setItem(0, 3, item)
-        item = QtWidgets.QTableWidgetItem()
-        item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsDragEnabled|QtCore.Qt.ItemIsDropEnabled|QtCore.Qt.ItemIsUserCheckable|QtCore.Qt.ItemIsEnabled)
-        self.JobTable.setItem(0, 4, item)
-        item = QtWidgets.QTableWidgetItem()
-        item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsDragEnabled|QtCore.Qt.ItemIsDropEnabled|QtCore.Qt.ItemIsUserCheckable|QtCore.Qt.ItemIsEnabled)
-        self.JobTable.setItem(0, 5, item)
-        item = QtWidgets.QTableWidgetItem()
-        item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsDragEnabled|QtCore.Qt.ItemIsDropEnabled|QtCore.Qt.ItemIsUserCheckable|QtCore.Qt.ItemIsEnabled)
-        self.JobTable.setItem(0, 6, item)
-        item = QtWidgets.QTableWidgetItem()
-        item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsDragEnabled|QtCore.Qt.ItemIsDropEnabled|QtCore.Qt.ItemIsUserCheckable|QtCore.Qt.ItemIsEnabled)
-        self.JobTable.setItem(0, 7, item)
-        item = QtWidgets.QTableWidgetItem()
-        item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsDragEnabled|QtCore.Qt.ItemIsDropEnabled|QtCore.Qt.ItemIsUserCheckable|QtCore.Qt.ItemIsEnabled)
-        self.JobTable.setItem(0, 8, item)
-        item = QtWidgets.QTableWidgetItem()
-        item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsDragEnabled|QtCore.Qt.ItemIsDropEnabled|QtCore.Qt.ItemIsUserCheckable|QtCore.Qt.ItemIsEnabled)
-        self.JobTable.setItem(0, 9, item)
-        item = QtWidgets.QTableWidgetItem()
-        item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsDragEnabled|QtCore.Qt.ItemIsDropEnabled|QtCore.Qt.ItemIsUserCheckable|QtCore.Qt.ItemIsEnabled)
-        self.JobTable.setItem(0, 10, item)
         self.JobTable.horizontalHeader().setVisible(True)
         self.JobTable.horizontalHeader().setCascadingSectionResizes(False)
         self.JobTable.horizontalHeader().setDefaultSectionSize(65)
@@ -502,82 +571,82 @@ class Ui_MainWindow(object):
         self.AvgTATLabel = QtWidgets.QLabel(self.JobInputs)
         self.AvgTATLabel.setGeometry(QtCore.QRect(852, 62, 91, 16))
         self.AvgTATLabel.setStyleSheet("font-size: 13px;\n"
-"color: #ffffff;")
+                                       "color: #ffffff;")
         self.AvgTATLabel.setObjectName("AvgTATLabel")
         self.AvgWTLabel = QtWidgets.QLabel(self.JobInputs)
         self.AvgWTLabel.setGeometry(QtCore.QRect(852, 116, 81, 16))
         self.AvgWTLabel.setStyleSheet("font-size: 13px;\n"
-"color: #ffffff;")
+                                      "color: #ffffff;")
         self.AvgWTLabel.setObjectName("AvgWTLabel")
         self.AvgRTLabel = QtWidgets.QLabel(self.JobInputs)
         self.AvgRTLabel.setGeometry(QtCore.QRect(852, 170, 81, 16))
         self.AvgRTLabel.setStyleSheet("font-size: 13px;\n"
-"color: #ffffff;")
+                                      "color: #ffffff;")
         self.AvgRTLabel.setObjectName("AvgRTLabel")
         self.AvgTAT = QtWidgets.QLineEdit(self.JobInputs)
         self.AvgTAT.setGeometry(QtCore.QRect(852, 88, 117, 20))
         self.AvgTAT.setStyleSheet("background: #31363b;\n"
-"font-size: 12px;\n"
-"color: #ffffff;")
+                                  "font-size: 12px;\n"
+                                  "color: #ffffff;")
         self.AvgTAT.setText("")
         self.AvgTAT.setReadOnly(True)
         self.AvgTAT.setObjectName("AvgTAT")
         self.AvgWT = QtWidgets.QLineEdit(self.JobInputs)
         self.AvgWT.setGeometry(QtCore.QRect(852, 142, 117, 20))
         self.AvgWT.setStyleSheet("background: #31363b;\n"
-"font-size: 12px;\n"
-"color: #ffffff;")
+                                 "font-size: 12px;\n"
+                                 "color: #ffffff;")
         self.AvgWT.setReadOnly(True)
         self.AvgWT.setObjectName("AvgWT")
         self.AvgRT = QtWidgets.QLineEdit(self.JobInputs)
         self.AvgRT.setGeometry(QtCore.QRect(852, 196, 117, 20))
         self.AvgRT.setStyleSheet("background: #31363b;\n"
-"font-size: 12px;\n"
-"color: #ffffff;")
+                                 "font-size: 12px;\n"
+                                 "color: #ffffff;")
         self.AvgRT.setReadOnly(True)
         self.AvgRT.setObjectName("AvgRT")
         self.JobNoLabel = QtWidgets.QLabel(self.JobInputs)
         self.JobNoLabel.setGeometry(QtCore.QRect(34, 16, 105, 16))
         self.JobNoLabel.setStyleSheet("*{\n"
-"font-size: 14px;\n"
-"color: #ffffff;\n"
-"}")
+                                      "font-size: 14px;\n"
+                                      "color: #ffffff;\n"
+                                      "}")
         self.JobNoLabel.setObjectName("JobNoLabel")
         self.JobNo = QtWidgets.QSpinBox(self.JobInputs)
         self.JobNo.setGeometry(QtCore.QRect(148, 12, 42, 22))
         self.JobNo.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"color: #000000;\n"
-"font-size: 13px;\n"
-"}")
+                                 "background: #ffffff;\n"
+                                 "color: #000000;\n"
+                                 "font-size: 13px;\n"
+                                 "}")
         self.JobNo.setObjectName("JobNo")
         self.GoBtn = QtWidgets.QPushButton(self.JobInputs)
         self.GoBtn.setGeometry(QtCore.QRect(206, 12, 43, 23))
         self.GoBtn.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                 "background: #ffffff;\n"
+                                 "font-size: 13px;\n"
+                                 "}")
         self.GoBtn.setObjectName("GoBtn")
         self.SolveBtn = QtWidgets.QPushButton(self.JobInputs)
         self.SolveBtn.setGeometry(QtCore.QRect(744, 12, 69, 23))
         self.SolveBtn.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                    "background: #ffffff;\n"
+                                    "font-size: 13px;\n"
+                                    "}")
         self.SolveBtn.setObjectName("SolveBtn")
         self.ResetBtn = QtWidgets.QPushButton(self.JobInputs)
         self.ResetBtn.setGeometry(QtCore.QRect(662, 12, 69, 23))
         self.ResetBtn.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                    "background: #ffffff;\n"
+                                    "font-size: 13px;\n"
+                                    "}")
         self.ResetBtn.setObjectName("ResetBtn")
         self.ImportBtn = QtWidgets.QPushButton(self.JobInputs)
         self.ImportBtn.setGeometry(QtCore.QRect(274, 12, 69, 23))
         self.ImportBtn.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                     "background: #ffffff;\n"
+                                     "font-size: 13px;\n"
+                                     "}")
         self.ImportBtn.setObjectName("ImportBtn")
         self.QueueView = QtWidgets.QFrame(self.centralwidget)
         self.QueueView.setGeometry(QtCore.QRect(10, 290, 1261, 221))
@@ -590,101 +659,106 @@ class Ui_MainWindow(object):
         self.JobQueue.setGeometry(QtCore.QRect(40, 60, 281, 41))
         self.JobQueue.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.JobQueue.setStyleSheet("*{\n"
-"background: #31363b;\n"
-"color: #ffffff;\n"
-"font-size: 15px;\n"
-"}")
+                                    "background: #31363b;\n"
+                                    "color: #ffffff;\n"
+                                    "font-size: 15px;\n"
+                                    "}")
         self.JobQueue.setText("")
-        self.JobQueue.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.JobQueue.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.JobQueue.setDragEnabled(False)
         self.JobQueue.setReadOnly(True)
         self.JobQueue.setObjectName("JobQueue")
         self.ReadyQueue = QtWidgets.QLineEdit(self.QueueView)
         self.ReadyQueue.setGeometry(QtCore.QRect(380, 60, 281, 41))
         self.ReadyQueue.setStyleSheet("*{\n"
-"background: #31363b;\n"
-"color: #ffffff;\n"
-"font-size: 15px;\n"
-"}")
+                                      "background: #31363b;\n"
+                                      "color: #ffffff;\n"
+                                      "font-size: 15px;\n"
+                                      "}")
         self.ReadyQueue.setText("")
-        self.ReadyQueue.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.ReadyQueue.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.ReadyQueue.setDragEnabled(False)
         self.ReadyQueue.setReadOnly(True)
         self.ReadyQueue.setObjectName("ReadyQueue")
         self.TerminatedQueue = QtWidgets.QLineEdit(self.QueueView)
         self.TerminatedQueue.setGeometry(QtCore.QRect(860, 60, 281, 41))
         self.TerminatedQueue.setStyleSheet("*{\n"
-"background: #31363b;\n"
-"color: #ffffff;\n"
-"font-size: 15px;\n"
-"}")
-        self.TerminatedQueue.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+                                           "background: #31363b;\n"
+                                           "color: #ffffff;\n"
+                                           "font-size: 15px;\n"
+                                           "}")
+        self.TerminatedQueue.setText("")
+        self.TerminatedQueue.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.TerminatedQueue.setReadOnly(True)
         self.TerminatedQueue.setObjectName("TerminatedQueue")
         self.CPUinQueue = QtWidgets.QLineEdit(self.QueueView)
         self.CPUinQueue.setGeometry(QtCore.QRect(730, 50, 81, 61))
         self.CPUinQueue.setStyleSheet("*{\n"
-"background: #31363b;\n"
-"color: #ffffff;\n"
-"font-size: 20px;\n"
-"}")
+                                      "background: #31363b;\n"
+                                      "color: #ffffff;\n"
+                                      "font-size: 20px;\n"
+                                      "}")
         self.CPUinQueue.setAlignment(QtCore.Qt.AlignCenter)
         self.CPUinQueue.setReadOnly(True)
         self.CPUinQueue.setObjectName("CPUinQueue")
         self.IODeviceinQueue = QtWidgets.QLineEdit(self.QueueView)
         self.IODeviceinQueue.setGeometry(QtCore.QRect(320, 140, 81, 61))
         self.IODeviceinQueue.setStyleSheet("*{\n"
-"background: #31363b;\n"
-"color: #ffffff;\n"
-"font-size: 20px;\n"
-"}")
+                                           "background: #31363b;\n"
+                                           "color: #ffffff;\n"
+                                           "font-size: 20px;\n"
+                                           "}")
         self.IODeviceinQueue.setAlignment(QtCore.Qt.AlignCenter)
         self.IODeviceinQueue.setReadOnly(True)
         self.IODeviceinQueue.setObjectName("IODeviceinQueue")
         self.IOQueue = QtWidgets.QLineEdit(self.QueueView)
         self.IOQueue.setGeometry(QtCore.QRect(470, 150, 281, 41))
         self.IOQueue.setStyleSheet("*{\n"
-"background: #31363b;\n"
-"color: #ffffff;\n"
-"font-size: 15px;\n"
-"}")
-        self.IOQueue.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+                                   "background: #31363b;\n"
+                                   "color: #ffffff;\n"
+                                   "font-size: 15px;\n"
+                                   "}")
+        self.IOQueue.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.IOQueue.setReadOnly(True)
         self.IOQueue.setObjectName("IOQueue")
         self.JobQueueLabel = QtWidgets.QLabel(self.QueueView)
         self.JobQueueLabel.setGeometry(QtCore.QRect(50, 40, 71, 16))
         self.JobQueueLabel.setStyleSheet("font-size: 13px;\n"
-"color: #ffffff;")
+                                         "color: #ffffff;")
         self.JobQueueLabel.setObjectName("JobQueueLabel")
         self.ReadyQueueLabel = QtWidgets.QLabel(self.QueueView)
         self.ReadyQueueLabel.setGeometry(QtCore.QRect(390, 40, 81, 16))
         self.ReadyQueueLabel.setStyleSheet("font-size: 13px;\n"
-"color: #ffffff;")
+                                           "color: #ffffff;")
         self.ReadyQueueLabel.setObjectName("ReadyQueueLabel")
         self.CPULabel = QtWidgets.QLabel(self.QueueView)
         self.CPULabel.setGeometry(QtCore.QRect(740, 30, 31, 16))
         self.CPULabel.setStyleSheet("font-size: 13px;\n"
-"color: #ffffff;")
+                                    "color: #ffffff;")
         self.CPULabel.setObjectName("CPULabel")
         self.TerminatedQueueLabel = QtWidgets.QLabel(self.QueueView)
         self.TerminatedQueueLabel.setGeometry(QtCore.QRect(870, 40, 121, 16))
         self.TerminatedQueueLabel.setStyleSheet("font-size: 13px;\n"
-"color: #ffffff;")
+                                                "color: #ffffff;")
         self.TerminatedQueueLabel.setObjectName("TerminatedQueueLabel")
         self.IOQueueLabel = QtWidgets.QLabel(self.QueueView)
         self.IOQueueLabel.setGeometry(QtCore.QRect(480, 130, 81, 16))
         self.IOQueueLabel.setStyleSheet("font-size: 13px;\n"
-"color: #ffffff;")
+                                        "color: #ffffff;")
         self.IOQueueLabel.setObjectName("IOQueueLabel")
         self.IODeviceLabel = QtWidgets.QLabel(self.QueueView)
         self.IODeviceLabel.setGeometry(QtCore.QRect(358, 120, 71, 16))
         self.IODeviceLabel.setStyleSheet("font-size: 13px;\n"
-"color: #ffffff;")
+                                         "color: #ffffff;")
         self.IODeviceLabel.setObjectName("IODeviceLabel")
         self.TimeLabel = QtWidgets.QLabel(self.QueueView)
         self.TimeLabel.setGeometry(QtCore.QRect(1180, 70, 61, 16))
         self.TimeLabel.setStyleSheet("font-size: 20px;\n"
-"color: #ffffff;")
+                                     "color: #ffffff;")
         self.TimeLabel.setObjectName("TimeLabel")
         self.JobtoReadyArrow = QtWidgets.QLabel(self.QueueView)
         self.JobtoReadyArrow.setGeometry(QtCore.QRect(322, 72, 59, 16))
@@ -699,17 +773,20 @@ class Ui_MainWindow(object):
         self.CPUtoTerminatedArrow = QtWidgets.QLabel(self.QueueView)
         self.CPUtoTerminatedArrow.setGeometry(QtCore.QRect(812, 72, 49, 16))
         self.CPUtoTerminatedArrow.setText("")
-        self.CPUtoTerminatedArrow.setPixmap(QtGui.QPixmap("Arrows/CPUtoTerminated.png"))
+        self.CPUtoTerminatedArrow.setPixmap(
+            QtGui.QPixmap("Arrows/CPUtoTerminated.png"))
         self.CPUtoTerminatedArrow.setObjectName("CPUtoTerminatedArrow")
         self.IOQueuetoIODeviceArrow = QtWidgets.QLabel(self.QueueView)
         self.IOQueuetoIODeviceArrow.setGeometry(QtCore.QRect(404, 162, 67, 16))
         self.IOQueuetoIODeviceArrow.setText("")
-        self.IOQueuetoIODeviceArrow.setPixmap(QtGui.QPixmap("Arrows/IOQueuetoIODevice.png"))
+        self.IOQueuetoIODeviceArrow.setPixmap(
+            QtGui.QPixmap("Arrows/IOQueuetoIODevice.png"))
         self.IOQueuetoIODeviceArrow.setObjectName("IOQueuetoIODeviceArrow")
         self.CPUtoIOQueueArrow = QtWidgets.QLabel(self.QueueView)
         self.CPUtoIOQueueArrow.setGeometry(QtCore.QRect(752, 112, 47, 63))
         self.CPUtoIOQueueArrow.setText("")
-        self.CPUtoIOQueueArrow.setPixmap(QtGui.QPixmap("Arrows/CPUtoIOQueue.png"))
+        self.CPUtoIOQueueArrow.setPixmap(
+            QtGui.QPixmap("Arrows/CPUtoIOQueue.png"))
         self.CPUtoIOQueueArrow.setObjectName("CPUtoIOQueueArrow")
         self.CPUtoReadyArrow = QtWidgets.QLabel(self.QueueView)
         self.CPUtoReadyArrow.setGeometry(QtCore.QRect(344, 18, 441, 57))
@@ -719,12 +796,13 @@ class Ui_MainWindow(object):
         self.IODevicetoReadyArrow = QtWidgets.QLabel(self.QueueView)
         self.IODevicetoReadyArrow.setGeometry(QtCore.QRect(344, 86, 17, 59))
         self.IODevicetoReadyArrow.setText("")
-        self.IODevicetoReadyArrow.setPixmap(QtGui.QPixmap("Arrows/IODevicetoReady.png"))
+        self.IODevicetoReadyArrow.setPixmap(
+            QtGui.QPixmap("Arrows/IODevicetoReady.png"))
         self.IODevicetoReadyArrow.setObjectName("IODevicetoReadyArrow")
         self.TimerLabel = QtWidgets.QLabel(self.QueueView)
         self.TimerLabel.setGeometry(QtCore.QRect(1176, 88, 57, 55))
         self.TimerLabel.setStyleSheet("font-size: 30px;\n"
-"color: #ffffff;")
+                                      "color: #ffffff;")
         self.TimerLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.TimerLabel.setObjectName("TimerLabel")
         self.CPUtoTerminatedArrow.raise_()
@@ -758,44 +836,44 @@ class Ui_MainWindow(object):
         self.GanttChartLabel = QtWidgets.QLabel(self.GanttChart)
         self.GanttChartLabel.setGeometry(QtCore.QRect(20, 10, 81, 16))
         self.GanttChartLabel.setStyleSheet("font-size: 13px;\n"
-"color: #ffffff;")
+                                           "color: #ffffff;")
         self.GanttChartLabel.setObjectName("GanttChartLabel")
-        self.tableWidget = QtWidgets.QTableWidget(self.GanttChart)
-        self.tableWidget.setGeometry(QtCore.QRect(20, 30, 1229, 65))
-        self.tableWidget.setStyleSheet("*{\n"
-"background: #31363b;\n"
-"font-size: 12px;\n"
-"color: #ffffff;\n"
-"border: 1px solid #ffffff;\n"
-"}\n"
-"\n"
-"QTableWidget{\n"
-"gridline-color: #ffffff;\n"
-"}\n"
-"\n"
-"QHeaderView::section\n"
-"{\n"
-"background: #31363b;\n"
-"font-size: 12px;\n"
-"color: #ffffff;\n"
-"border: 1px solid #ffffff;\n"
-"}\n"
-"")
-        self.tableWidget.setShowGrid(True)
-        self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(0)
-        self.tableWidget.setRowCount(2)
+        self.GanttChartTable = QtWidgets.QTableWidget(self.GanttChart)
+        self.GanttChartTable.setGeometry(QtCore.QRect(20, 30, 1229, 65))
+        self.GanttChartTable.setStyleSheet("*{\n"
+                                           "background: #31363b;\n"
+                                           "font-size: 12px;\n"
+                                           "color: #ffffff;\n"
+                                           "border: 1px solid #ffffff;\n"
+                                           "}\n"
+                                           "\n"
+                                           "QTableWidget{\n"
+                                           "gridline-color: #ffffff;\n"
+                                           "}\n"
+                                           "\n"
+                                           "QHeaderView::section\n"
+                                           "{\n"
+                                           "background: #31363b;\n"
+                                           "font-size: 12px;\n"
+                                           "color: #ffffff;\n"
+                                           "border: 1px solid #ffffff;\n"
+                                           "}\n"
+                                           "")
+        self.GanttChartTable.setShowGrid(True)
+        self.GanttChartTable.setObjectName("GanttChartTable")
+        self.GanttChartTable.setColumnCount(0)
+        self.GanttChartTable.setRowCount(2)
         item = QtWidgets.QTableWidgetItem()
         item.setTextAlignment(QtCore.Qt.AlignCenter)
-        self.tableWidget.setVerticalHeaderItem(0, item)
+        self.GanttChartTable.setVerticalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         item.setTextAlignment(QtCore.Qt.AlignCenter)
-        self.tableWidget.setVerticalHeaderItem(1, item)
-        self.tableWidget.horizontalHeader().setVisible(False)
-        self.tableWidget.horizontalHeader().setDefaultSectionSize(39)
-        self.tableWidget.verticalHeader().setVisible(True)
-        self.tableWidget.verticalHeader().setDefaultSectionSize(23)
-        self.tableWidget.verticalHeader().setMinimumSectionSize(5)
+        self.GanttChartTable.setVerticalHeaderItem(1, item)
+        self.GanttChartTable.horizontalHeader().setVisible(False)
+        self.GanttChartTable.horizontalHeader().setDefaultSectionSize(39)
+        self.GanttChartTable.verticalHeader().setVisible(True)
+        self.GanttChartTable.verticalHeader().setDefaultSectionSize(23)
+        self.GanttChartTable.verticalHeader().setMinimumSectionSize(5)
         self.Controls = QtWidgets.QFrame(self.centralwidget)
         self.Controls.setGeometry(QtCore.QRect(10, 630, 1261, 35))
         self.Controls.setAutoFillBackground(False)
@@ -806,37 +884,38 @@ class Ui_MainWindow(object):
         self.PlayBtn = QtWidgets.QPushButton(self.Controls)
         self.PlayBtn.setGeometry(QtCore.QRect(52, 6, 75, 23))
         self.PlayBtn.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                   "background: #ffffff;\n"
+                                   "font-size: 13px;\n"
+                                   "}")
         self.PlayBtn.setObjectName("PlayBtn")
         self.PauseBtn = QtWidgets.QPushButton(self.Controls)
         self.PauseBtn.setGeometry(QtCore.QRect(136, 6, 75, 23))
         self.PauseBtn.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                    "background: #ffffff;\n"
+                                    "font-size: 13px;\n"
+                                    "}")
         self.PauseBtn.setObjectName("PauseBtn")
         self.PrevBtn = QtWidgets.QPushButton(self.Controls)
         self.PrevBtn.setGeometry(QtCore.QRect(700, 6, 93, 23))
         self.PrevBtn.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                   "background: #ffffff;\n"
+                                   "font-size: 13px;\n"
+                                   "}")
         self.PrevBtn.setObjectName("PrevBtn")
         self.NextBtn = QtWidgets.QPushButton(self.Controls)
         self.NextBtn.setGeometry(QtCore.QRect(800, 6, 75, 23))
         self.NextBtn.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                   "background: #ffffff;\n"
+                                   "font-size: 13px;\n"
+                                   "}")
         self.NextBtn.setObjectName("NextBtn")
         self.ScheduleProgressBar = QtWidgets.QProgressBar(self.Controls)
         self.ScheduleProgressBar.setGeometry(QtCore.QRect(288, 6, 349, 23))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
@@ -845,7 +924,8 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
@@ -854,13 +934,16 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Highlight, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.Highlight, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 128))
         brush.setStyle(QtCore.Qt.NoBrush)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.PlaceholderText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.PlaceholderText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
@@ -869,7 +952,8 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
@@ -878,13 +962,16 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
         brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Highlight, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.Highlight, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 128))
         brush.setStyle(QtCore.Qt.NoBrush)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.PlaceholderText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.PlaceholderText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
@@ -893,7 +980,8 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
@@ -902,38 +990,40 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Highlight, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.Highlight, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 128))
         brush.setStyle(QtCore.Qt.NoBrush)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.PlaceholderText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.PlaceholderText, brush)
         self.ScheduleProgressBar.setPalette(palette)
         self.ScheduleProgressBar.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"color: #ffffff;\n"
-"}")
+                                               "background: #ffffff;\n"
+                                               "font-size: 13px;\n"
+                                               "color: #ffffff;\n"
+                                               "}")
         self.ScheduleProgressBar.setProperty("value", 24)
         self.ScheduleProgressBar.setObjectName("ScheduleProgressBar")
         self.GraphBtn = QtWidgets.QPushButton(self.Controls)
         self.GraphBtn.setGeometry(QtCore.QRect(964, 6, 117, 23))
         self.GraphBtn.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                    "background: #ffffff;\n"
+                                    "font-size: 13px;\n"
+                                    "}")
         self.GraphBtn.setObjectName("GraphBtn")
         self.DownloadBtn = QtWidgets.QPushButton(self.Controls)
         self.DownloadBtn.setGeometry(QtCore.QRect(1098, 6, 81, 23))
         self.DownloadBtn.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                       "background: #ffffff;\n"
+                                       "font-size: 13px;\n"
+                                       "}")
         self.DownloadBtn.setObjectName("DownloadBtn")
         self.HelpBtn = QtWidgets.QPushButton(self.Controls)
         self.HelpBtn.setGeometry(QtCore.QRect(1196, 6, 53, 23))
         self.HelpBtn.setStyleSheet("*{\n"
-"background: #ffffff;\n"
-"font-size: 13px;\n"
-"}")
+                                   "background: #ffffff;\n"
+                                   "font-size: 13px;\n"
+                                   "}")
         self.HelpBtn.setObjectName("HelpBtn")
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -942,7 +1032,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Process Scheduler"))
+        MainWindow.setWindowTitle(_translate(
+            "MainWindow", "Process Scheduler"))
         self.AlgoLabel.setText(_translate("MainWindow", "Select Algorithm:"))
         self.AlgoSelector.setItemText(0, _translate("MainWindow", "FCFS"))
         self.AlgoSelector.setItemText(1, _translate("MainWindow", "SJF"))
@@ -953,15 +1044,16 @@ class Ui_MainWindow(object):
         self.AlgoSelector.setItemText(6, _translate("MainWindow", "Priority"))
         self.ModeLabel.setText(_translate("MainWindow", "Select Mode:"))
         self.TypeLabel.setText(_translate("MainWindow", "Select Type:"))
-        self.ContextSwitchLabel.setText(_translate("MainWindow", "Context Switch:"))
-        self.TimeQuantumLabel.setText(_translate("MainWindow", "Time Quantum:"))
-        self.ModeNonPreemptive.setText(_translate("MainWindow", "Non Preemptive"))
+        self.ContextSwitchLabel.setText(
+            _translate("MainWindow", "Context Switch:"))
+        self.TimeQuantumLabel.setText(
+            _translate("MainWindow", "Time Quantum:"))
+        self.ModeNonPreemptive.setText(
+            _translate("MainWindow", "Non Preemptive"))
         self.ModePreemptive.setText(_translate("MainWindow", "Preemptive"))
         self.TypeWithoutIOBT.setText(_translate("MainWindow", "Without IOBT"))
         self.TypeWithIOBT.setText(_translate("MainWindow", "With IOBT"))
         self.JobTable.setSortingEnabled(False)
-        item = self.JobTable.verticalHeaderItem(0)
-        item.setText(_translate("MainWindow", "Job 01"))
         item = self.JobTable.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Priority"))
         item = self.JobTable.horizontalHeaderItem(1)
@@ -984,9 +1076,6 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "%"))
         item = self.JobTable.horizontalHeaderItem(10)
         item.setText(_translate("MainWindow", "State"))
-        __sortingEnabled = self.JobTable.isSortingEnabled()
-        self.JobTable.setSortingEnabled(False)
-        self.JobTable.setSortingEnabled(__sortingEnabled)
         self.AvgTATLabel.setText(_translate("MainWindow", "Average TAT:"))
         self.AvgWTLabel.setText(_translate("MainWindow", "Average WT:"))
         self.AvgRTLabel.setText(_translate("MainWindow", "Average RT:"))
@@ -998,15 +1087,16 @@ class Ui_MainWindow(object):
         self.JobQueueLabel.setText(_translate("MainWindow", "Job Queue"))
         self.ReadyQueueLabel.setText(_translate("MainWindow", "Ready Queue"))
         self.CPULabel.setText(_translate("MainWindow", "CPU"))
-        self.TerminatedQueueLabel.setText(_translate("MainWindow", "Terminated Queue"))
+        self.TerminatedQueueLabel.setText(
+            _translate("MainWindow", "Terminated Queue"))
         self.IOQueueLabel.setText(_translate("MainWindow", "I/O Queue"))
         self.IODeviceLabel.setText(_translate("MainWindow", "I/O Device"))
         self.TimeLabel.setText(_translate("MainWindow", "TIME"))
         self.TimerLabel.setText(_translate("MainWindow", "00"))
         self.GanttChartLabel.setText(_translate("MainWindow", "Gantt Chart"))
-        item = self.tableWidget.verticalHeaderItem(0)
+        item = self.GanttChartTable.verticalHeaderItem(0)
         item.setText(_translate("MainWindow", "Job"))
-        item = self.tableWidget.verticalHeaderItem(1)
+        item = self.GanttChartTable.verticalHeaderItem(1)
         item.setText(_translate("MainWindow", "Time"))
         self.PlayBtn.setText(_translate("MainWindow", "Play"))
         self.PauseBtn.setText(_translate("MainWindow", "Pause"))
