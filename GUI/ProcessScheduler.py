@@ -72,53 +72,68 @@ class Ui_MainWindow(object):
             BTlist.append(int(valueHere))
 
         return BTlist
-    
+
     def setCTlist(self, CTlist):
         totalRows = self.JobTable.rowCount()
 
         col = 5
         for row in range(totalRows):
-            self.JobTable.setItem(
-                row, col, QtWidgets.QTableWidgetItem(str(CTlist[row])))
+            item = self.JobTable.item(row, col)
+            item.setText(str(CTlist[row]))
 
     def setTATlist(self, TATlist):
         totalRows = self.JobTable.rowCount()
 
         col = 6
         for row in range(totalRows):
-            self.JobTable.setItem(
-                row, col, QtWidgets.QTableWidgetItem(str(TATlist[row])))
+            item = self.JobTable.item(row, col)
+            item.setText(str(TATlist[row]))
 
     def setWTlist(self, WTlist):
         totalRows = self.JobTable.rowCount()
 
         col = 7
         for row in range(totalRows):
-            self.JobTable.setItem(
-                row, col, QtWidgets.QTableWidgetItem(str(WTlist[row])))
+            item = self.JobTable.item(row, col)
+            item.setText(str(WTlist[row]))
 
     def setRTlist(self, RTlist):
         totalRows = self.JobTable.rowCount()
 
         col = 8
         for row in range(totalRows):
-            self.JobTable.setItem(
-                row, col, QtWidgets.QTableWidgetItem(str(RTlist[row])))
+            item = self.JobTable.item(row, col)
+            item.setText(str(RTlist[row]))
 
     def setDefaultPerc(self):
         totalRows = self.JobTable.rowCount()
 
         col = 9
         for row in range(totalRows):
-            self.JobTable.setItem(row, col, QtWidgets.QTableWidgetItem("100"))
+            item = self.JobTable.item(row, col)
+            item.setText("100%")
 
     def setDefaultState(self):
         totalRows = self.JobTable.rowCount()
 
         col = 10
         for row in range(totalRows):
-            self.JobTable.setItem(
-                row, col, QtWidgets.QTableWidgetItem("Terminated"))
+            item = self.JobTable.item(row, col)
+            item.setText("Terminated")
+        
+    # Function to set items widget in each cell of table and align them.
+
+    def setWidgetsInCellsAndAlign(self):
+
+        rows = self.JobTable.rowCount()
+        cols = self.JobTable.columnCount()
+
+        for col in range(cols):
+            for row in range(rows):
+                item = QtWidgets.QTableWidgetItem("")
+                item.setTextAlignment(QtCore.Qt.AlignVCenter | QtCore.Qt.AlignHCenter)
+                self.JobTable.setItem(
+                    row, col, item)
     
     # Solve button Handler
 
