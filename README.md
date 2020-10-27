@@ -1,2 +1,3 @@
-# OS-Algorithms
-Website demonstrating the working of various Operating System Algorithms.
+# OS-Job Scheduling Algorithms Visualization With Webd and GUI(Python- PyQt5)
+
+Creating visualization for Job Scheduling Algorithms.
