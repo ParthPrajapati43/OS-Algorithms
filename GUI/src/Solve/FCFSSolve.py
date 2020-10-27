@@ -1,7 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 def solveFCFS(self):
-    
     totalJobs = self.JobTable.rowCount()
     ATlist = self.getATList()
     BTlist = self.getBTList()
