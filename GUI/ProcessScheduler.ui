@@ -585,7 +585,7 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="MemoryView">
+   <widget class="QFrame" name="AlgoInfoSetter">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -1168,14 +1168,6 @@ border: 1px solid #ffffff;
      <attribute name="verticalHeaderHighlightSections">
       <bool>false</bool>
      </attribute>
-     <row>
-      <property name="text">
-       <string>Job 01</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignCenter</set>
-      </property>
-     </row>
      <column>
       <property name="text">
        <string>Priority</string>
@@ -1264,73 +1256,6 @@ border: 1px solid #ffffff;
        <set>AlignCenter</set>
       </property>
      </column>
-     <item row="0" column="0">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
-     </item>
-     <item row="0" column="1">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="textAlignment">
-       <set>AlignLeading|AlignVCenter</set>
-      </property>
-     </item>
-     <item row="0" column="2">
-      <property name="text">
-       <string/>
-      </property>
-     </item>
-     <item row="0" column="3">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
-     </item>
-     <item row="0" column="4">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
-     </item>
-     <item row="0" column="5">
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
-     </item>
-     <item row="0" column="6">
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
-     </item>
-     <item row="0" column="7">
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
-     </item>
-     <item row="0" column="8">
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
-     </item>
-     <item row="0" column="9">
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
-     </item>
-     <item row="0" column="10">
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
-     </item>
     </widget>
     <widget class="QLabel" name="AvgTATLabel">
      <property name="geometry">
@@ -1574,167 +1499,11 @@ font-size: 13px;
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLineEdit" name="JobQueue">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>60</y>
-       <width>281</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">*{
-background: #31363b;
-color: #ffffff;
-font-size: 15px;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="dragEnabled">
-      <bool>false</bool>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="ReadyQueue">
-     <property name="geometry">
-      <rect>
-       <x>380</x>
-       <y>60</y>
-       <width>281</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">*{
-background: #31363b;
-color: #ffffff;
-font-size: 15px;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="dragEnabled">
-      <bool>false</bool>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="TerminatedQueue">
-     <property name="geometry">
-      <rect>
-       <x>860</x>
-       <y>60</y>
-       <width>281</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">*{
-background: #31363b;
-color: #ffffff;
-font-size: 15px;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="CPUinQueue">
-     <property name="geometry">
-      <rect>
-       <x>730</x>
-       <y>50</y>
-       <width>81</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">*{
-background: #31363b;
-color: #ffffff;
-font-size: 20px;
-}</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="IODeviceinQueue">
-     <property name="geometry">
-      <rect>
-       <x>320</x>
-       <y>140</y>
-       <width>81</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">*{
-background: #31363b;
-color: #ffffff;
-font-size: 20px;
-}</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="IOQueue">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>150</y>
-       <width>281</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">*{
-background: #31363b;
-color: #ffffff;
-font-size: 15px;
-}</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QLabel" name="JobQueueLabel">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>40</y>
+       <x>32</x>
+       <y>42</y>
        <width>71</width>
        <height>16</height>
       </rect>
@@ -1750,8 +1519,8 @@ color: #ffffff;</string>
     <widget class="QLabel" name="ReadyQueueLabel">
      <property name="geometry">
       <rect>
-       <x>390</x>
-       <y>40</y>
+       <x>382</x>
+       <y>42</y>
        <width>81</width>
        <height>16</height>
       </rect>
@@ -1767,8 +1536,8 @@ color: #ffffff;</string>
     <widget class="QLabel" name="CPULabel">
      <property name="geometry">
       <rect>
-       <x>740</x>
-       <y>30</y>
+       <x>738</x>
+       <y>36</y>
        <width>31</width>
        <height>16</height>
       </rect>
@@ -1801,7 +1570,7 @@ color: #ffffff;</string>
     <widget class="QLabel" name="IOQueueLabel">
      <property name="geometry">
       <rect>
-       <x>480</x>
+       <x>450</x>
        <y>130</y>
        <width>81</width>
        <height>16</height>
@@ -1819,7 +1588,7 @@ color: #ffffff;</string>
      <property name="geometry">
       <rect>
        <x>358</x>
-       <y>120</y>
+       <y>124</y>
        <width>71</width>
        <height>16</height>
       </rect>
@@ -1901,7 +1670,7 @@ color: #ffffff;</string>
      <property name="geometry">
       <rect>
        <x>404</x>
-       <y>162</y>
+       <y>160</y>
        <width>67</width>
        <height>16</height>
       </rect>
@@ -1981,6 +1750,358 @@ color: #ffffff;</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
+    <widget class="QTableWidget" name="JobQueue">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>64</y>
+       <width>301</width>
+       <height>53</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">*{
+background: #31363b;
+font-size: 12px;
+color: #ffffff;
+border: 1px solid #ffffff;
+}
+
+QTableWidget{
+gridline-color: #ffffff;
+}
+
+QHeaderView::section
+{
+background: #31363b;
+font-size: 12px;
+color: #ffffff;
+border: 1px solid #ffffff;
+}
+</string>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>50</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>34</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>Job Queue</string>
+      </property>
+     </row>
+    </widget>
+    <widget class="QTableWidget" name="ReadyQueue">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>64</y>
+       <width>301</width>
+       <height>53</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">*{
+background: #31363b;
+font-size: 12px;
+color: #ffffff;
+border: 1px solid #ffffff;
+}
+
+QTableWidget{
+gridline-color: #ffffff;
+}
+
+QHeaderView::section
+{
+background: #31363b;
+font-size: 12px;
+color: #ffffff;
+border: 1px solid #ffffff;
+}
+</string>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>50</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>34</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>Ready Queue</string>
+      </property>
+     </row>
+    </widget>
+    <widget class="QTableWidget" name="TerminatedQueue">
+     <property name="geometry">
+      <rect>
+       <x>862</x>
+       <y>64</y>
+       <width>301</width>
+       <height>53</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">*{
+background: #31363b;
+font-size: 12px;
+color: #ffffff;
+border: 1px solid #ffffff;
+}
+
+QTableWidget{
+gridline-color: #ffffff;
+}
+
+QHeaderView::section
+{
+background: #31363b;
+font-size: 12px;
+color: #ffffff;
+border: 1px solid #ffffff;
+}
+</string>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>50</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>34</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>Terminated Queue</string>
+      </property>
+     </row>
+    </widget>
+    <widget class="QTableWidget" name="IOQueue">
+     <property name="geometry">
+      <rect>
+       <x>448</x>
+       <y>150</y>
+       <width>301</width>
+       <height>53</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">*{
+background: #31363b;
+font-size: 12px;
+color: #ffffff;
+border: 1px solid #ffffff;
+}
+
+QTableWidget{
+gridline-color: #ffffff;
+}
+
+QHeaderView::section
+{
+background: #31363b;
+font-size: 12px;
+color: #ffffff;
+border: 1px solid #ffffff;
+}
+</string>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>50</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>34</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>I/O Queue</string>
+      </property>
+     </row>
+    </widget>
+    <widget class="QTableWidget" name="CPU">
+     <property name="geometry">
+      <rect>
+       <x>734</x>
+       <y>56</y>
+       <width>85</width>
+       <height>59</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">*{
+background: #31363b;
+font-size: 12px;
+color: #ffffff;
+border: 1px solid #ffffff;
+}
+
+QTableWidget{
+gridline-color: #ffffff;
+}
+
+QHeaderView::section
+{
+background: #31363b;
+font-size: 12px;
+color: #ffffff;
+border: 1px solid #ffffff;
+}
+</string>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>85</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>58</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>CPU</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>CPU</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QTableWidget" name="IODevice">
+     <property name="geometry">
+      <rect>
+       <x>318</x>
+       <y>144</y>
+       <width>85</width>
+       <height>59</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">*{
+background: #31363b;
+font-size: 12px;
+color: #ffffff;
+border: 1px solid #ffffff;
+}
+
+QTableWidget{
+gridline-color: #ffffff;
+}
+
+QHeaderView::section
+{
+background: #31363b;
+font-size: 12px;
+color: #ffffff;
+border: 1px solid #ffffff;
+}
+</string>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>85</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>58</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>CPU</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>CPU</string>
+      </property>
+     </column>
+    </widget>
     <zorder>CPUtoTerminatedArrow</zorder>
     <zorder>CPUtoIOQueueArrow</zorder>
     <zorder>ReadytoCPUArrow</zorder>
@@ -1988,12 +2109,6 @@ color: #ffffff;</string>
     <zorder>IODevicetoReadyArrow</zorder>
     <zorder>JobtoReadyArrow</zorder>
     <zorder>CPUtoReadyArrow</zorder>
-    <zorder>JobQueue</zorder>
-    <zorder>ReadyQueue</zorder>
-    <zorder>TerminatedQueue</zorder>
-    <zorder>CPUinQueue</zorder>
-    <zorder>IODeviceinQueue</zorder>
-    <zorder>IOQueue</zorder>
     <zorder>JobQueueLabel</zorder>
     <zorder>ReadyQueueLabel</zorder>
     <zorder>CPULabel</zorder>
@@ -2002,6 +2117,12 @@ color: #ffffff;</string>
     <zorder>IODeviceLabel</zorder>
     <zorder>TimeLabel</zorder>
     <zorder>TimerLabel</zorder>
+    <zorder>JobQueue</zorder>
+    <zorder>ReadyQueue</zorder>
+    <zorder>TerminatedQueue</zorder>
+    <zorder>IOQueue</zorder>
+    <zorder>CPU</zorder>
+    <zorder>IODevice</zorder>
    </widget>
    <widget class="QFrame" name="GanttChart">
     <property name="geometry">
@@ -2041,7 +2162,7 @@ color: #ffffff;</string>
       <string>Gantt Chart</string>
      </property>
     </widget>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="GanttChartTable">
      <property name="geometry">
       <rect>
        <x>20</x>
