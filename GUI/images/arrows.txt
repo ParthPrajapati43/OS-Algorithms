@@ -1,0 +1,11 @@
+Here is the list of all the arrows used in the queue diagram in the Process Scheduler Application.
+
+1. CPU to I/O Queue
+2. CPU to Ready Queue
+3. CPU to Terminated Queue
+4. I/O Device to Ready Queue
+5. I/O Queue to I/O Device
+6. Job Queue to Ready Queue
+7. Ready Queue to CPU
+
+All the images of all these arrows are in this folder
