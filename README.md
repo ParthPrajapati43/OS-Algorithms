@@ -10,3 +10,5 @@ Algorithms:
 * Longest Job First (LJF)
 * Longest Remaining Time First (LRTF)
 * Priority Based Scheduling 
+
+More Details in readme.pdf 
